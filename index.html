@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="pokerApp" ng-controller="pokerController"> 
+    <div style="display: flex; justify-content: space-between;">
+        <div>poker dos cria</div>
+        <div>made by gabriel vaz</div>
+    </div>  
+
+    <div class="cartas">
+        <div ng-repeat="carta in cartasMesa">
+            <img ng-src="https://deckofcardsapi.com/static/img/{{ getCodigoCarta(carta) }}.svg" height="450">
+        </div>
+    </div>
+    <div class="cartas" style="margin-top: -250px;">
+        <div ng-repeat="carta in cartasMao">
+            <img ng-src="https://deckofcardsapi.com/static/img/{{ getCodigoCarta(carta) }}.svg" height="450">
+        </div>
+    </div>
+        
+    <h1>{{ resultado }}</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="controller/pokerController.js"></script>
+</body>
+</html>
+<style>
+    body {
+        background-color: green;
+        color: rgb(255, 251, 126);
+    }
+    img {
+        margin-right: -100px;
+        margin-left: -100px;
+    }
+    h1 {
+        text-align: center;
+        font-size: 60px;
+        margin-top: -90px;
+    }
+    .cartas {
+        display: flex; 
+        margin-left: auto; 
+        margin-right: auto; 
+        max-width: fit-content;
+        margin-top: -80px;
+    }
+</style>
